@@ -1,0 +1,54 @@
+{
+  "name": "release-node",
+  "version": "1.0.0",
+  "description": "A CLI utility to create the release branches and tags for git repositories.",
+  "main": "index.js",
+  "keywords": [
+    "release",
+    "release-flow",
+    "git",
+    "node",
+    "cli"
+  ],
+  "author": "Rishikesh Darandale <Rishikesh.Darandale@gmail.com>",
+  "homepage": "https://rishikeshdarandale.github.io/release-node/",
+  "bugs": {
+    "url": "https://github.com/RishikeshDarandale/release-node/issues",
+    "email": "Rishikesh.Darandale@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RishikeshDarandale/release-node"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.8",
+    "eslint": "^5.6.1",
+    "eslint-config-google": "^0.10.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "mock-fs": "^4.7.0",
+    "prettier": "^1.14.3",
+    "sinon": "^6.3.5"
+  },
+  "engines": {
+    "node": ">=8.11.2",
+    "npm": ">=5.6.0"
+  },
+  "scripts": {
+    "test": "ava --verbose",
+    "lint": "eslint --fix",
+    "precommit": "lint-staged",
+    "prepush": "lint-staged"
+  },
+  "bin": {
+    "release-node": "./commands/release-node"
+  }
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const Logger = require('../libs/logger.js');
+
+const logger = new Logger();
+
+// invalidate the cloudfront Cache
+program
+  .name('init')
+  .usage('[options]')
+  .option('--pre-release-tag <preReleaseTag>', 'A pre release tag. e.g. development', 'development')
+  .option('--debug', 'Log extra debug information')
+  .action(function(options) {
+    logger.info('Initializing this project with version: 1.0.0-' + options.preReleaseTag);
+  })
+  .parse(process.argv);
